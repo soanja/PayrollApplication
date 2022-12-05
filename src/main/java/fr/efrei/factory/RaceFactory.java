@@ -1,6 +1,5 @@
 package fr.efrei.factory;
 
-import fr.efrei.domain.Name;
 import fr.efrei.domain.Race;
 import fr.efrei.util.Helper;
 
@@ -19,6 +18,4 @@ public class RaceFactory {
 
         return race;
     }
-
-
 }
