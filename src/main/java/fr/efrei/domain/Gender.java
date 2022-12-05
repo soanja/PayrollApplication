@@ -11,11 +11,11 @@ public class Gender {
         this.descriptionGender = builder.descriptionGender;
     }
 
-    public int getLastName() {
+    public int getIdGender() {
         return idGender;
     }
 
-    public String getMiddleName() {
+    public String getDescriptionGender() {
         return descriptionGender;
     }
 
@@ -32,12 +32,12 @@ public class Gender {
         private int idGender;
         private String descriptionGender;
 
-        public Gender.Builder setLastName(int idGender) {
+        public Gender.Builder setIdGender(int idGender) {
             this.idGender = idGender;
             return this;
         }
 
-        public Gender.Builder setMiddleName(String descriptionGender) {
+        public Gender.Builder setDescriptionGender(String descriptionGender) {
             this.descriptionGender = descriptionGender;
             return this;
         }
