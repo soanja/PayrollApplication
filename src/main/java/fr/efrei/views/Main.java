@@ -6,6 +6,8 @@ import fr.efrei.domain.Race;
 import fr.efrei.factory.RaceFactory;
 import fr.efrei.repository.RaceRepository;
 
+import java.util.NoSuchElementException;
+
 public class Main {
 
     //populate, load, init
@@ -26,9 +28,9 @@ public class Main {
     public static void main(String[] args) {
 
         //it is a singleton we can't have new RaceRepository
-       RaceRepository repository = RaceRepository.getRepository();
-       //we can have update, delete etc.
-
+        RaceRepository repository = RaceRepository.getRepository();
+        //we can have update, delete etc.
+        System.out.println(repository.getAll());
 
     }
 }
