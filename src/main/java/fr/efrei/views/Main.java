@@ -1,9 +1,13 @@
 package fr.efrei.views;
 
+import fr.efrei.domain.Employee;
 import fr.efrei.domain.Name;
+import fr.efrei.domain.Gender;
+import fr.efrei.factory.GenderFactory;
 import fr.efrei.factory.NameFactory;
 import fr.efrei.domain.Race;
 import fr.efrei.factory.RaceFactory;
+import fr.efrei.repository.GenderRepository;
 import fr.efrei.repository.RaceRepository;
 
 import java.util.NoSuchElementException;
@@ -22,9 +26,9 @@ public class Main {
         Race race2 = RaceFactory.createRace("Asian");
         Race race3 = RaceFactory.createRace("SpaceMan");
 
+        Gender gender = GenderFactory.createGender("Colored");
+
     }
-
-
     public static void main(String[] args) {
 
         //it is a singleton we can't have new RaceRepository
@@ -32,6 +36,11 @@ public class Main {
 
         //we can have update, delete etc.
         System.out.println(repository.getAll());
+
+        //we have to print in a table format w/ titles
+
+        //menu : add, update, delete, show all, search,exit
+
 
     }
 }
