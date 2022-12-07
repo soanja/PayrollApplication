@@ -41,7 +41,6 @@ public class NameRepository implements iNameRepository{
             if (r.getLastName().equals(s)){
                 return r;
             }
-
         }
         return null; //return null if we don't find the object in the list
     }
