@@ -23,7 +23,6 @@ public class EmployeeFactory {
             return null;
         }
 
-
         //referring to the BUILDER class inside the Race class
         Employee employee = new Employee.Builder().setEmployeeNumber(employeeNumber)
                 .setEmployeeName(employeeName).setGenderEmployee(genderEmployee).setRaceEmployee(raceEmmployee)
@@ -32,3 +31,6 @@ public class EmployeeFactory {
         return employee;
     }
 }
+
+//for employee number it doesn't make sens to use UUID
+

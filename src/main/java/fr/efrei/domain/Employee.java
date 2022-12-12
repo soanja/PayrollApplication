@@ -3,9 +3,12 @@ package fr.efrei.domain;
 public class Employee {
 
     private int employeeNumber;
+    //private String employeeNumber;
     private Name employeeName;
     private Gender genderEmployee;
     private Race raceEmployee;
+
+    //private String raceiD;
 
     private Employee() {}
 
@@ -15,7 +18,6 @@ public class Employee {
         this.employeeName = builder.employeeName;
         this.genderEmployee = builder.genderEmployee;
         this.raceEmployee = builder.raceEmployee;
-
     }
 
     //our getters
@@ -33,6 +35,7 @@ public class Employee {
 
     public Race getRaceEmployee() {
         return raceEmployee;
+        //return raceId;
     }
 
     @Override
