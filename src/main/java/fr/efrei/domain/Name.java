@@ -55,6 +55,12 @@ public class Name {
         }
 
         //copy
+        public Builder copy(Name name){
+            this.firstName = name.firstName;
+            this.middleName = name.middleName;
+            this.lastName = name.lastName;
+            return this;
+        }
 
         //build method
         public Name build(){
