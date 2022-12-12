@@ -5,7 +5,7 @@ public interface IRepository<T, ID> {
     //generic and abstraction way
     T create(T t); //good habit to return the object to make sure it's well created
     T read(ID id);
-    T update(T t);
+    T update(T t1, T t2);
     boolean delete(ID d); //delete by an ID, since it is a unique attribute
 
 }

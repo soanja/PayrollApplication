@@ -11,7 +11,7 @@ public class GenderFactory {
             return null;
         }
 
-        Gender gender = new Gender.Builder().setIdGender(Integer.valueOf(id)).
+        Gender gender = new Gender.Builder().setIdGender(id).
                 setDescriptionGender(descriptionGender).build();
 
         return gender;
@@ -23,7 +23,7 @@ public class GenderFactory {
             return null;
         }
 
-        Gender gender = new Gender.Builder().setIdGender(Integer.valueOf(id)).build();
+        Gender gender = new Gender.Builder().setIdGender(id).build();
 
         return gender;
     }

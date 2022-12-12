@@ -1,12 +1,21 @@
 package fr.efrei.domain;
 
+
+import java.awt.*;
+
 public class Employee {
 
-    private int employeeNumber;
+    private String employeeNumber;
     //private String employeeNumber;
     private Name employeeName;
     private Gender genderEmployee;
     private Race raceEmployee;
+
+    private Address addressEmployee;
+    private Position positionEmployee;
+    private Contact contactEmployee;
+
+    private String jobEmployee;
 
     //private String raceiD;
 
@@ -18,10 +27,14 @@ public class Employee {
         this.employeeName = builder.employeeName;
         this.genderEmployee = builder.genderEmployee;
         this.raceEmployee = builder.raceEmployee;
+        this.jobEmployee = builder.jobEmployee;
+        this.contactEmployee = builder.contactEmployee;
+        this.addressEmployee = builder.addressEmployee;
+        this.positionEmployee = builder.positionEmployee;
     }
 
     //our getters
-    public int getEmployeeNumber() {
+    public String getEmployeeNumber() {
         return employeeNumber;
     }
 
@@ -31,6 +44,21 @@ public class Employee {
 
     public Gender getGenderEmployee() {
         return genderEmployee;
+    }
+    public String getJobEmployee() {
+        return jobEmployee;
+    }
+
+    public Address getAddress() {
+        return addressEmployee;
+    }
+
+    public Position getPosition() {
+        return positionEmployee;
+    }
+
+    public Contact getContact() {
+        return contactEmployee;
     }
 
     public Race getRaceEmployee() {
@@ -45,18 +73,24 @@ public class Employee {
                 ", employeeName=" + employeeName +
                 ", genderEmployee=" + genderEmployee +
                 ", raceEmployee=" + raceEmployee +
+                ", jobEmployee=" + jobEmployee +
                 '}';
     }
 
 
     //builder class = static inner class, copy the same attributes at the top
     public static class Builder {
-        private int employeeNumber;
+        private String employeeNumber;
         private Name employeeName;
         private Gender genderEmployee;
         private Race raceEmployee;
+        private Address addressEmployee;
+        private Position positionEmployee;
+        private Contact contactEmployee;
 
-        public Builder setEmployeeNumber(int employeeNumber) {
+        private String jobEmployee;
+
+        public Builder setEmployeeNumber(String employeeNumber) {
             this.employeeNumber = employeeNumber;
             return this; //return the Builder object
         }
@@ -76,11 +110,33 @@ public class Employee {
             return this; //return the Builder object
         }
 
+        public Builder setJobEmployee(String jobEmployee) {
+            this.jobEmployee = jobEmployee;
+            return this; //return the Builder object
+        }
+
+
+        public Builder setContactEmployee(Contact contactEmployee) {
+            this.contactEmployee = contactEmployee;
+            return this; //return the Builder object
+        }
+
+        public Builder setAddressEmployee(Address addressEmployee) {
+            this.addressEmployee = addressEmployee;
+            return this;
+        }
+
+        public Builder setPositionEmployee(Position positionEmployee) {
+            this.positionEmployee = positionEmployee;
+            return this;
+        }
+
         public Builder copy(Employee employee) {
             this.employeeNumber = employee.employeeNumber;
             this.employeeName = employee.employeeName;
             this.raceEmployee = employee.raceEmployee;
             this.genderEmployee = employee.genderEmployee;
+            this.jobEmployee = employee.jobEmployee;
             return this; //return the Builder object
         }
 

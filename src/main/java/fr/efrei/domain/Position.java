@@ -1,20 +1,23 @@
-package za.cput.domain;
+package fr.efrei.domain;
+
 
 public class Position {
-    private int positionCode;
+    private String positionCode;
     private boolean positionFilled;
+    private String statusPosition;
 
     //default constructor
-    public Position() {}
+    private Position() {}
 
     //add another constructor later
     private Position(Builder builder){
         this.positionCode = builder.positionCode;
         this.positionFilled = builder.positionFilled;
+        this.statusPosition = builder.statusPosition;
     }
 
     //getters but no setters, to have protected classes
-    public int getPositionCode() {
+    public String getPositionCode() {
         return positionCode;
     }
 
@@ -22,22 +25,27 @@ public class Position {
         return positionFilled;
     }
 
+    public String getStatusPosition() {
+        return statusPosition;
+    }
 
     @Override
     public String toString() {
         return "Position{" +
                 "positionCode=" + positionCode +
                 ", positionFilled=" + positionFilled +
+                ", status position=" + statusPosition +
                 '}';
     }
 
     //builder class = static inner class, copy the same attributes at the top
     public static class Builder {
-        private int positionCode;
+        private String positionCode;
         private boolean positionFilled;
+        private String statusPosition;
 
         //setters, not getters
-        public Builder setPositionCode(int positionCode) {
+        public Builder setPositionCode(String positionCode) {
             this.positionCode = positionCode;
             return this; //return the Builder object
         }
@@ -47,9 +55,15 @@ public class Position {
             return this; //return the Builder object
         }
 
+        public Builder setStatusPosition(String statusPosition){
+            this.statusPosition = statusPosition;
+            return this;
+        }
+
         public Builder copy(Position position){
             this.positionCode = position.positionCode;
             this.positionFilled = position.positionFilled;
+            this.statusPosition = position.statusPosition;
             return this; //return the Builder object
         }
 

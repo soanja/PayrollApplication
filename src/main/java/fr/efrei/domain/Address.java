@@ -1,4 +1,5 @@
-package domain;
+package fr.efrei.domain;
+
 public class Address {
     private String id;
     private String streetAdress;
@@ -17,12 +18,12 @@ public class Address {
         this.country = build.country;
         this.zipCode = build.zipCode;
         this.streetnumber = build.streetnumber;
-        this.name = build.name;        
+        this.name = build.name;
     }
 
 
-    
-    
+
+
 
     @Override
     public String toString() {
@@ -44,7 +45,7 @@ public class Address {
         private String zipCode;
         private int streetnumber;
         private String name;
-        
+
 
         public Builder setID(String id){
             this.id = id;
@@ -88,15 +89,15 @@ public class Address {
             this.streetAdress = address.streetAdress;
             this.streetnumber = address.streetnumber;
             this.zipCode = address.zipCode;
-            
+
             return this;
         }
 
         public Address build(){
             return new Address(this);
         }
-        
-        
+
+
     }
 
 

@@ -1,18 +1,22 @@
-package za.cput.factory;
+package fr.efrei.factory;
 
-import za.cput.domain.Position;
-import za.cput.util.Helper;
+
+import fr.efrei.domain.Position;
+import fr.efrei.util.Helper;
 
 public class PositionFactory {
-    public static Position createPosition(int positionCode){
+    public static Position createPosition(String status){
         boolean positionFilled = true;
 
-        if (positionCode != 0){
+        String positionCode = Helper.generateId();
+
+
+        if(Helper.isNullOrEmpty(status)){
             return null;
         }
 
         Position position = new Position.Builder().setPositionCode(positionCode) //referring to the BUILDER class inside the Race class
-                .setPositionFilled(positionFilled)
+                .setPositionFilled(positionFilled).setStatusPosition(status)
                 .build();
 
         return position;

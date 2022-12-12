@@ -46,12 +46,12 @@ public class NameRepository implements iNameRepository{
     }
 
     @Override
-    public Name update(Name name) {
-        Name oldName = read(name.getLastName());
-        if (name != null){
+    public Name update(Name name1, Name name2) {
+        Name oldName = read(name1.getLastName());
+        if (name1 != null){
             nameDB.remove(oldName); //take the object away from the data structure
-            nameDB.add(name);
-            return name;
+            nameDB.add(name2);
+            return name2;
         }
         return null;
     }

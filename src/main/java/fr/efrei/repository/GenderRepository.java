@@ -46,12 +46,12 @@ public class GenderRepository implements iGenderRepository{
     }
 
     @Override
-    public Gender update(Gender gender) {
-        Gender oldGender = read(String.valueOf(gender.getIdGender()));
-        if (gender != null){
+    public Gender update(Gender gender1, Gender gender2) {
+        Gender oldGender = read(String.valueOf(gender1.getIdGender()));
+        if (gender2 != null){
             genderDB.remove(oldGender); //take the object away from the data structure
-            genderDB.add(gender);
-            return gender;
+            genderDB.add(gender2);
+            return gender2;
         }
         return null;
     }

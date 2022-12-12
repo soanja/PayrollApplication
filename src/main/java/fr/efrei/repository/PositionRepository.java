@@ -1,6 +1,6 @@
-package za.cput.repository;
+package fr.efrei.repository;
 
-import za.cput.domain.Position;
+import fr.efrei.domain.Position;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,9 +35,9 @@ public class PositionRepository implements IPositionRepository {
 
 
     @Override
-    public Position read(int s) {
+    public Position read(String s) {
         for (Position p : positionDB){
-            if (p.getPositionCode() == s){
+            if (p.getPositionCode().equals(s)){
                 return p;
             }
 
@@ -46,18 +46,19 @@ public class PositionRepository implements IPositionRepository {
     }
 
     @Override
-    public Position update(Position position) {
-        Position oldPosition = read(position.getPositionCode());
-        if (position != null){
+    public Position update(Position position1, Position position2) {
+        Position oldPosition = read(position1.getPositionCode());
+        if (position1 != null){
             positionDB.remove(oldPosition); //take the object away from the data structure
-            positionDB.add(position);
-            return position;
+            positionDB.add(position2);
+            return position2;
         }
         return null;
     }
 
+
     @Override
-    public boolean delete(int s) {
+    public boolean delete(String s) {
         Position positionToDelete = read(s);
         if (positionToDelete == null) {
             return false;

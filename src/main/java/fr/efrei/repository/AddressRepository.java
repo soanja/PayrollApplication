@@ -1,13 +1,15 @@
-package Repository;
+package fr.efrei.repository;
+import fr.efrei.domain.Address;
+import fr.efrei.util.Helper;
+
 
 import java.util.List;
 import java.util.ArrayList;
-import domain.Address;
 
 public class AddressRepository implements IAddressRepository{
     private static AddressRepository repository = null;
     private List<Address> AddressDB = null;
-    
+
     private AddressRepository(){
         AddressDB = new ArrayList<>();
     }
@@ -46,12 +48,12 @@ public class AddressRepository implements IAddressRepository{
     }
 
     @Override
-    public Address update(Address add) {
-        Address old = read(add.getId());
-        if (add != null){
+    public Address update(Address add1, Address add2) {
+        Address old = read(add1.getId());
+        if (add1 != null){
             AddressDB.remove(old);
-            AddressDB.add(add);
-            return add;
+            AddressDB.add(add2);
+            return add2;
         }
         return null;
     }
@@ -66,5 +68,5 @@ public class AddressRepository implements IAddressRepository{
         return true;
     }
 
-    
+
 }

@@ -45,12 +45,12 @@ public class RaceRepository implements IRaceRepository {
     }
 
     @Override
-    public Race update(Race race) {
-        Race oldRace = read(race.getId());
-        if (race != null){
+    public Race update(Race race1, Race race2) {
+        Race oldRace = read(race1.getId());
+        if (race1 != null){
             raceDB.remove(oldRace); //take the object away from the data structure
-            raceDB.add(race);
-            return race;
+            raceDB.add(race2);
+            return race2;
         }
         return null;
     }

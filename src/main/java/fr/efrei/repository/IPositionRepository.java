@@ -1,6 +1,6 @@
-package za.cput.repository;
+package fr.efrei.repository;
 
-import za.cput.domain.Position;
+import fr.efrei.domain.Position;
 
 import java.util.List;
 
