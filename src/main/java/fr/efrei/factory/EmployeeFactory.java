@@ -1,15 +1,12 @@
 package fr.efrei.factory;
 
-import fr.efrei.domain.Name;
-import fr.efrei.domain.Gender;
-import fr.efrei.domain.Race;
-import fr.efrei.domain.Employee;
+import fr.efrei.domain.*;
 import fr.efrei.util.Helper;
 
 public class EmployeeFactory {
 
-    public static Employee createEmployee(int employeeNumber, Name employeeName, Gender genderEmployee, Race raceEmmployee){
-        int employeeNumb = Integer.parseInt(Helper.generateId());
+    public static Employee createEmployee(Name employeeName, Gender genderEmployee, Race raceEmployee, String jobEmployee
+    , Address employeeAddress, Contact employeeContact, Position employeePosition){
 
         if (Helper.isNullOrEmpty(employeeName.getFirstName())){
             return null;
@@ -23,14 +20,13 @@ public class EmployeeFactory {
             return null;
         }
 
+        String employeeNumber = Helper.generateId();
         //referring to the BUILDER class inside the Race class
         Employee employee = new Employee.Builder().setEmployeeNumber(employeeNumber)
-                .setEmployeeName(employeeName).setGenderEmployee(genderEmployee).setRaceEmployee(raceEmmployee)
-                .build();
+                .setEmployeeName(employeeName).setGenderEmployee(genderEmployee).setRaceEmployee(raceEmployee).setJobEmployee(jobEmployee).
+                setAddressEmployee(employeeAddress).setPositionEmployee(employeePosition).setContactEmployee(employeeContact).build();
 
         return employee;
     }
 }
-
-//for employee number it doesn't make sens to use UUID
 
